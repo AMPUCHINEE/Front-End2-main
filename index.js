@@ -5,7 +5,9 @@ const path = require("path");
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 5500;
-const base_url = "http://10.104.13.247:3000";
+const base_url = process.env.BACKENDURL;
+
+
 
 app.set("views",path.join(__dirname,"/public/views"))
 app.set('view engine','ejs');
