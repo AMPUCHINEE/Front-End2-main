@@ -3,7 +3,8 @@ const axios = require('axios');
 var bodyParser = require('body-parser');
 const path = require("path");
 const app = express();
-
+require('dotenv').config();
+const PORT = process.env.PORT || 5500;
 const base_url = "http://localhost:3000";
 
 app.set("views",path.join(__dirname,"/public/views"))
@@ -80,6 +81,6 @@ app.get("/delete/:id",async (req,res) => {
     }
 });
 
-app.listen(5500, () => {
+app.listen(PORT, () => {
     console.log('Server started on port 5500');
 });
