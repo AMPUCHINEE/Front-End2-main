@@ -5,7 +5,8 @@ const path = require("path");
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 5500;
-const base_url = process.env.BACK;
+// const base_url = process.env.BACK;
+const base_url="http://localhost:3000";
 
 
 
