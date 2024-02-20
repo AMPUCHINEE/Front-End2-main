@@ -1,19 +1,18 @@
 const express = require('express');
 const axios = require('axios');
-var bodyParser = require('body-parser');
 const path = require("path");
 const app = express();
+var bodyParser = require('body-parser');
 require('dotenv').config();
 const PORT = process.env.PORT || 5500;
-// const base_url = process.env.BACK;
-const base_url="http://localhost:3000";
+// const base_url = process.env.BACKENDURL;
 
+const base_url = "http://localhost:3000";
 
-
-app.set("views",path.join(__dirname,"/public/views"))
+app.set("views",path.join(__dirname,"/public/views"));
 app.set('view engine','ejs');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false}));
 
 app.use(express.static(__dirname + '/public'));
 
@@ -83,6 +82,8 @@ app.get("/delete/:id", async (req, res) => {
     }
 });
 
+
+
 app.listen(PORT, () => {
-    console.log('Server started on port 5500');
+    console.log('Sever started on post 5500');
 });
